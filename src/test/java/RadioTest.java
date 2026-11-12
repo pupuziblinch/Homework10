@@ -7,18 +7,18 @@ public class RadioTest {
 
     @Test
     public void testStationValidValueInside() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
 
-        radio.setCurrentStation(5);
+        radio.setCurrentStation(15);
 
-        int expected = 5;
+        int expected = 15;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void testStationInvalidValueLeft() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
 
         radio.setCurrentStation(-5);
 
@@ -29,9 +29,9 @@ public class RadioTest {
 
     @Test
     public void testStationInvalidValueRight() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
 
-        radio.setCurrentStation(15);
+        radio.setCurrentStation(25);
 
         int expected = 0;
         int actual = radio.getCurrentStation();
@@ -40,7 +40,7 @@ public class RadioTest {
 
     @Test
     public void testStationLimitValue() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
 
         radio.setCurrentStation(-1);
 
@@ -51,7 +51,7 @@ public class RadioTest {
 
     @Test
     public void testStationLimitValue0() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
 
         radio.setCurrentStation(0);
 
@@ -62,7 +62,7 @@ public class RadioTest {
 
     @Test
     public void testStationLimitValue1() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
 
         radio.setCurrentStation(1);
 
@@ -72,32 +72,32 @@ public class RadioTest {
     }
 
     @Test
-    public void testStationLimitValue8() {
-        Radio radio = new Radio();
+    public void testStationLimitValue18() {
+        Radio radio = new Radio(20);
 
-        radio.setCurrentStation(8);
+        radio.setCurrentStation(18);
 
-        int expected = 8;
+        int expected = 18;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void testStationLimitValue9() {
-        Radio radio = new Radio();
+    public void testStationLimitValue19() {
+        Radio radio = new Radio(20);
 
-        radio.setCurrentStation(9);
+        radio.setCurrentStation(19);
 
-        int expected = 9;
+        int expected = 19;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void testStationLimitValue10() {
-        Radio radio = new Radio();
+    public void testStationLimitValue20() {
+        Radio radio = new Radio(20);
 
-        radio.setCurrentStation(10);
+        radio.setCurrentStation(20);
 
         int expected = 0;
         int actual = radio.getCurrentStation();
@@ -209,20 +209,20 @@ public class RadioTest {
 
     @Test
     public void testNextStationValidValueInside() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
 
-        radio.setCurrentStation(5);
+        radio.setCurrentStation(15);
 
         radio.next();
 
-        int expected = 6;
+        int expected = 16;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void testNextStationLimitValue0() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
 
         radio.setCurrentStation(0);
 
@@ -235,7 +235,7 @@ public class RadioTest {
 
     @Test
     public void testNextStationLimitValue1() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
 
         radio.setCurrentStation(1);
 
@@ -247,23 +247,23 @@ public class RadioTest {
     }
 
     @Test
-    public void testNextStationLimitValue8() {
-        Radio radio = new Radio();
+    public void testNextStationLimitValue18() {
+        Radio radio = new Radio(20);
 
-        radio.setCurrentStation(8);
+        radio.setCurrentStation(18);
 
         radio.next();
 
-        int expected = 9;
+        int expected = 19;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void testNextStationLimitValue9() {
-        Radio radio = new Radio();
+    public void testNextStationLimitValue19() {
+        Radio radio = new Radio(20);
 
-        radio.setCurrentStation(9);
+        radio.setCurrentStation(19);
 
         radio.next();
 
@@ -276,33 +276,33 @@ public class RadioTest {
 
     @Test
     public void testPrevStationValidValueInside() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
 
-        radio.setCurrentStation(5);
+        radio.setCurrentStation(15);
 
         radio.prev();
 
-        int expected = 4;
+        int expected = 14;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void testPrevStationLimitValue0() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
 
         radio.setCurrentStation(0);
 
         radio.prev();
 
-        int expected = 9;
+        int expected = 19;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void testPrevStationLimitValue1() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
 
         radio.setCurrentStation(1);
 
@@ -314,27 +314,27 @@ public class RadioTest {
     }
 
     @Test
-    public void testPrevStationLimitValue8() {
-        Radio radio = new Radio();
+    public void testPrevStationLimitValue18() {
+        Radio radio = new Radio(20);
 
-        radio.setCurrentStation(8);
+        radio.setCurrentStation(18);
 
         radio.prev();
 
-        int expected = 7;
+        int expected = 17;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void testPrevStationLimitValue9() {
-        Radio radio = new Radio();
+    public void testPrevStationLimitValue19() {
+        Radio radio = new Radio(20);
 
-        radio.setCurrentStation(9);
+        radio.setCurrentStation(19);
 
         radio.prev();
 
-        int expected = 8;
+        int expected = 18;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
